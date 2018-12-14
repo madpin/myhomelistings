@@ -194,7 +194,7 @@ class Listing(object):
                     "Error getting images. Error message: " + str(e))
             return
         images_list = []
-        if div is None:
+        if div is None or len(div) <= 0:
             return
         for item in div.split('|'):
             ret_str = item.strip().strip(',').strip('.')
