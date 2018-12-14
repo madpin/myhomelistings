@@ -542,7 +542,6 @@ class Listing(object):
             'address_line_1': self.address_line_1,
             'county': self.county,
             'listing_image': self.images,
-            # 'listing_hires_image': self.hires_images,
             'agent': self.agent,
             'agent_url': self.agent_url,
             'contact_number': self.contact_number,
