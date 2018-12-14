@@ -46,7 +46,7 @@ class Listing(object):
             if(self._data_from_search):
                 return ''.join(c for c in self._data_from_search['id'] if c.isdigit())
             else:
-                return self._ad_page_content.find('div', {'class': 'reportAdAction'})['propertyId']
+                return self._ad_page_content.find('div', {'class': 'propertyEnquiryAction'})['data-property-id']
         except Exception as e:
             if self._debug:
                 self._logger.error(
