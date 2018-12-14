@@ -44,10 +44,9 @@ class Listing(object):
     def id(self):
         try:
             if(self._data_from_search):
-                # todo
                 return ''.join(c for c in self._data_from_search['id'] if c.isdigit())
             else:
-                return self._ad_page_content.find('div', {'id': 'brochure_map'})['data-id']
+                return self._ad_page_content.find('div', {'class': 'reportAdAction'})['propertyId']
         except Exception as e:
             if self._debug:
                 self._logger.error(
@@ -543,7 +542,7 @@ class Listing(object):
             'address_line_1': self.address_line_1,
             'county': self.county,
             'listing_image': self.images,
-            'listing_hires_image': self.hires_images,
+            # 'listing_hires_image': self.hires_images,
             'agent': self.agent,
             'agent_url': self.agent_url,
             'contact_number': self.contact_number,
