@@ -303,21 +303,42 @@ class Listing(object):
         This method returns the dwelling type.
         :return:
         """
+        
+        ret = ''
         try:
             if(self._data_from_search):
-                return self._data_from_search.find(
+                ret = self._data_from_search.find(
                     'i', {"class": "fa-home"}
                 ).parent.text.strip()
             else:
-                return self._ad_page_content.find(
+                ret =  self._ad_page_content.find(
                     'i', {"class": "fa-home"}
                 ).parent.text.strip()
+        except Exception as e:
+            if self._debug:
+                self._logger.error(
+                    "Error getting dwelling_type. Error message: " + str(e))
+
+        try:
+            if(self._data_from_search):
+                ret += ' | ' + self._data_from_search.find(
+                    'div', {"class": "wrapper"}
+                )['data-ga']
+            else:
+                ret += ' | ' + self._ad_page_content.find(
+                    'div', {"class": "propertyRatingAction"}
+                )['data-property-section']
 
         except Exception as e:
             if self._debug:
                 self._logger.error(
                     "Error getting dwelling_type. Error message: " + str(e))
-            return
+
+        if(ret):
+            return ret
+        else:
+            return None
+
 
     @property
     def posted_since(self):
