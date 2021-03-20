@@ -14,7 +14,7 @@ future==0.16.0
 html2text==2018.1.9
 html5lib==1.0.1
 idna==2.7
-Jinja2==2.8
+Jinja2==2.11.3
 livereload==2.5.1
 Mako==1.0.7
 Markdown==2.6.7
