@@ -1,4 +1,5 @@
 # Myhomelistings
+DEPRECATED - That library is not being maintained anymore.
 
 A library that enables programmatic interaction with [Myhome.ie](https://myhome.ie)
 <!-- 
