@@ -16,7 +16,7 @@ html5lib==1.0.1
 idna==2.7
 Jinja2==2.8
 livereload==2.5.1
-Mako==1.0.7
+Mako==1.2.2
 Markdown==2.6.7
 MarkupSafe==0.23
 mkdocs==0.17.2
